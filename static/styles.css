@@ -1,0 +1,54 @@
+/* Custom stylesheet */
+body {
+    background-color: rgb(245, 233, 221) !important;
+}
+
+/* Custom background style for buttons */
+.custom-bg {
+    background-color: rgb(72, 117, 255) !important;
+    border: none !important;
+    outline: none !important;
+}
+
+.custom-bg:hover {
+    background-color: rgb(42, 87, 230) !important;
+}
+
+/* Custom style for texts */
+.custom-text {
+    color: rgb(72, 117, 255) !important;
+}
+
+.custom-text:hover {
+    color: rgb(42, 87, 230) !important;
+}
+
+.custom-textt {
+    color: rgb(72, 117, 255) !important;
+}
+
+.bg {
+    background-color: rgb(245, 233, 221) !important;
+}
+
+.pig {
+    margin-top: 10px !important;
+    margin-bottom: 10px !important;
+    justify-content: center !important;
+}
+
+.pig-li {
+    color: rgb(72, 117, 255) !important;
+}
+
+.modal-text {
+    color: rgb(42, 87, 230) !important;
+    justify-content: center !important;
+}
+
+/* Custom design for email link */
+.custom-alert {
+    background-color: rgb(72, 117, 255) !important;
+    color: rgb(245, 233, 221) !important;
+    border: none !important;
+}
