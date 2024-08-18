@@ -1,0 +1,76 @@
+{% extends 'bootstrap/index.html' %} <!-- Extends bootstrap template  -->
+{% block title %} Registration {% endblock %} <!-- Sets the title of this page -->
+{% block content %} <!-- Begins the content block -->
+<head>
+    <!-- Link to the custom stylesheet -->
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<!-- Navigation Bar -->
+<nav class="navbar navbar-expand-lg navbar-dark custom-bg">
+    <div class="container">
+        <a class="navbar-brand" href="{{url_for('home')}}">One Click</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link" href="{{url_for('about')}}">About</a> <!-- About page link -->
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{url_for('contact')}}">Contact</a> <!-- Contact page link -->
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{url_for('login')}}">Login</a> <!-- Login page link -->
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<!-- Registration Form -->
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <form method="POST">
+                {{ form.hidden_tag() }} <!-- Hidden CSRF(Cross-Site Request Forgery) token field -->
+                <div class="mb-3">
+                    {{ form.first_name.label(class="form-label") }} <!-- First name input label -->
+                    {{ form.first_name(class="form-control", autocomplete="given-name") }} <!-- First name input field -->
+                    {% for error in form.first_name.errors %}
+                        <div class="alert alert-danger">{{ error }}</div> <!-- Displays first name validation errors -->
+                    {% endfor %}
+                </div>
+                <div class="mb-3">
+                    {{ form.last_name.label(class="form-label") }} <!-- Last name input label -->
+                    {{ form.last_name(class="form-control", autocomplete="family-name") }} <!-- Last name input field -->
+                    {% for error in form.last_name.errors %}
+                        <div class="alert alert-danger">{{ error }}</div> <!-- Displays last name validation errors -->
+                    {% endfor %}
+                </div>
+                <div class="mb-3">
+                    {{ form.email.label(class="form-label") }} <!-- Email input label -->
+                    {{ form.email(class="form-control", autocomplete="email") }} <!-- Email input field -->
+                    {% for error in form.email.errors %}
+                        <div class="alert alert-danger">{{ error }}</div> <!-- Displays email validation errors -->
+                    {% endfor %}
+                </div>
+                <div class="mb-3">
+                    {{ form.password.label(class="form-label") }} <!-- Password input label -->
+                    {{ form.password(class="form-control", autocomplete="new-password") }} <!-- Password input field -->
+                    {% for error in form.password.errors %}
+                        <div class="alert alert-danger">{{ error }}</div> <!-- Displays password validation errors -->
+                    {% endfor %}
+                </div>
+                <div class="mt-3 text-center">
+                    <button type="submit" class="btn btn-secondary custom-bg">Register</button> <!-- Submit button -->
+                </div>
+            </form>
+        </div>
+    </div>
+    <!-- Login Link -->
+    <div class="nav-item text-center">
+        <p class="nav-link custom-text">Already have an account? <a class="custom-text" href="{{url_for('login')}}">Login.</a></p> <!-- Login page link -->
+    </div>
+</div>
+{% endblock %} <!-- End of content block -->
