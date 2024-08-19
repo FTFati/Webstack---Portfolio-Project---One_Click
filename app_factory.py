@@ -9,7 +9,7 @@ app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///sqlite.db'
 
 # Set the secret key for session security
-app.config['SECRET_KEY'] = '4f90a6731c50f2eba5f5764b8232a48ac83c109108120fbe'
+app.config['SECRET_KEY'] = '2ef3acf95fb4dd67a3705440c55a548a2968e67b661baf2d'
 
 # Initialize SQLAlchemy to work with the Flask app
 db = SQLAlchemy(app)
@@ -18,8 +18,8 @@ db = SQLAlchemy(app)
 app.config['MAIL_SERVER'] = 'smtp.gmail.com'
 app.config['MAIL_PORT'] = 587
 app.config['MAIL_USE_TLS'] = True
-app.config['MAIL_USERNAME'] = 'belloabiodun17@gmail.com'
-app.config['MAIL_PASSWORD'] = 'ekjm xvvi ofwn dwxh'
+app.config['MAIL_USERNAME'] = 'fatima.amkachou@gmail.com'
+app.config['MAIL_PASSWORD'] = 'FTFATI_2024'
 
 # Initialize Flask-Mail to work with the Flask app
 mail = Mail(app)
